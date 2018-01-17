@@ -1,3 +1,9 @@
+/*!
+    \file
+    \brief Основной файл программы
+
+    Данный файл содержит реализации функций print_ip и функцию main
+*/
 #include <tuple>
 #include <type_traits>
 #include <array>
@@ -6,6 +12,9 @@
 #include <vector>
 #include <list>
 
+/**
+    \brief Определяет порядок байт в системе
+*/
 bool IsLittleEndian()
 {
     const uint16_t v = 0xFEFF;
@@ -13,8 +22,10 @@ bool IsLittleEndian()
     return v1[1] == 0xFE;
 }
 
+/// True если порядок байт little-endian
 const bool LittleEndian = IsLittleEndian();
 
+/// Шаблон, определяющий, есть ли у типа итератор
 template< typename T >
 struct has_iterators
 {
@@ -31,6 +42,7 @@ public:
     static constexpr bool value = decltype( check( std::declval< T >() ) )::value;
 };
 
+/// Шаблон, определяющий, есть ли у типа константный итератор
 template< typename T >
 struct has_const_iterators
 {
@@ -53,18 +65,22 @@ void print_tuple_impl( std::basic_ostream<ChStream, TrStream>& os, const Tuple& 
     auto b = { ( ( os << ( Is == 0 ? "" : "." ) << std::get<Is>( t ) ), 0 )... };
 }
 
+/// Функция печати tuple как ip
 template< class ChStream, class TrStream, class... Args >
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const std::tuple<Args...>& t )
 {
     print_tuple_impl( os, t, std::index_sequence_for<Args...>{} );
 }
 
+/// Вспомогательный тип
 struct cont_type
 {};
 
+/// Вспомогательный тип
 struct other_type
 {};
 
+/// Функция печати элементов коллекций как ip
 template< class ChStream, class TrStream, class TCont>
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const TCont& v,  cont_type )
 {
@@ -83,6 +99,7 @@ void print_ip( std::basic_ostream<ChStream, TrStream>& os, const TCont& v,  cont
     }
 }
 
+/// Функция печати числовых типов побайтов как ip
 template< class ChStream, class TrStream, class  T>
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const T& v, other_type )
 {
@@ -110,21 +127,25 @@ void print_ip( std::basic_ostream<ChStream, TrStream>& os, const T& v, other_typ
     }
 }
 
+/// Функция печати текста как... текста
 template< class ChStream, class TrStream, class ChStr, class TrStr, class AllocStr >
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const std::basic_string<ChStr, TrStr, AllocStr>& str )
 {
     os << str;
 }
 
+/// Функция печати ip
 template< class ChStream, class TrStream, class T >
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const T& v )
 {
     print_ip( os, v, std::conditional<has_const_iterators<T>::value, cont_type, other_type>::type{} );
 }
 
+/// Макрос для вывода тестируемого образца и сам вывод
 #define PRINT( x )  std::cout << #x##"\n"; \
                     print_ip( std::cout, x ); \
                     std::cout << '\n';
+
 int main()
 {
     PRINT( char( -1 ) );
@@ -135,5 +156,6 @@ int main()
     PRINT( std::vector<int>({ 12,15,6,7 }) );
     PRINT( std::list<int>( { 12,15,6,7 } ) );
     PRINT( std::make_tuple( 13, 16, 7, 8 ) );
+
     return 0;
 }
