@@ -25,6 +25,14 @@ bool IsLittleEndian()
 /// True если порядок байт little-endian
 const bool LittleEndian = IsLittleEndian();
 
+template<std::size_t...> struct seq{};
+
+template<std::size_t N, std::size_t... Is>
+struct gen_seq : gen_seq<N - 1, N - 1, Is...>{};
+
+template<std::size_t... Is>
+struct gen_seq<0, Is...> : seq<Is...>{};
+
 /// Шаблон, определяющий, есть ли у типа итератор
 template< typename T >
 struct has_iterators
@@ -60,7 +68,7 @@ public:
 };
 
 template< class ChStream, class TrStream, class Tuple, std::size_t... Is >
-void print_tuple_impl( std::basic_ostream<ChStream, TrStream>& os, const Tuple& t, std::index_sequence<Is...> )
+void print_tuple_impl( std::basic_ostream<ChStream, TrStream>& os, const Tuple& t, seq<Is...> )
 {
     auto b = { ( ( os << ( Is == 0 ? "" : "." ) << std::get<Is>( t ) ), 0 )... };
 }
@@ -69,7 +77,7 @@ void print_tuple_impl( std::basic_ostream<ChStream, TrStream>& os, const Tuple& 
 template< class ChStream, class TrStream, class... Args >
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const std::tuple<Args...>& t )
 {
-    print_tuple_impl( os, t, std::index_sequence_for<Args...>{} );
+    print_tuple_impl( os, t, gen_seq<sizeof...(Args)>{} );
 }
 
 /// Вспомогательный тип
