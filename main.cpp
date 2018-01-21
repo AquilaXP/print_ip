@@ -146,7 +146,7 @@ void print_ip( std::basic_ostream<ChStream, TrStream>& os, const std::basic_stri
 template< class ChStream, class TrStream, class T >
 void print_ip( std::basic_ostream<ChStream, TrStream>& os, const T& v )
 {
-    print_ip( os, v, std::conditional<has_const_iterators<T>::value, cont_type, other_type>::type{} );
+    print_ip( os, v, std::conditional<has_const_iterators<T>::value, cont_type, other_type>::type() );
 }
 
 /// Макрос для вывода тестируемого образца и сам вывод
