@@ -150,7 +150,7 @@ void print_ip( std::basic_ostream<ChStream, TrStream>& os, const T& v )
 }
 
 /// Макрос для вывода тестируемого образца и сам вывод
-#define PRINT( x )  std::cout << #x##"\n"; \
+#define PRINT( x )  std::cout << #x"\n"; \
                     print_ip( std::cout, x ); \
                     std::cout << '\n';
 
