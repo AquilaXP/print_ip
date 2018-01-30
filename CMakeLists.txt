@@ -27,29 +27,6 @@ set_target_properties( print_ip PROPERTIES
     COMPILE_OPTIONS -Wall
 )
 
-find_package(Doxygen)
-
-IF(NOT DOXYGEN_FOUND)
-    MESSAGE(STATUS "No Doxygen found. Documentation won't be built")
-ELSE()
-    file(GLOB SOURCES ${CMAKE_CURRENT_LIST_DIR}/*.cpp )
-
-    CONFIGURE_FILE(Doxyfile.in Doxyfile @ONLY)
-
-    set( DOXYFILE ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile )
-
-    add_custom_command(OUTPUT html
-        COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
-        DEPENDS ${MARKDOWN_DOC} ${SOURCES} ${DOXYFILES}
-        WORKING_DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/../
-        )
-
-    add_custom_target(doc ALL DEPENDS html)
-   # install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/html
-   #     DESTINATION ${DOC_INSTALL_DIR}
-   #     COMPONENT doc)
-ENDIF()
-
 install(TARGETS print_ip RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
