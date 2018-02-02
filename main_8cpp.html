@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Macros</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,8 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
@@ -89,19 +89,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p>Основной файл программы  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;tuple&gt;</code><br/>
-<code>#include &lt;type_traits&gt;</code><br/>
-<code>#include &lt;array&gt;</code><br/>
+<div class="textblock"><code>#include &lt;array&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;string&gt;</code><br/>
 <code>#include &lt;vector&gt;</code><br/>
 <code>#include &lt;list&gt;</code><br/>
+<code>#include &quot;<a class="el" href="print__ip_8h_source.html">print_ip.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for main.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8cpp__incl.png" border="0" usemap="#main_8cpp" alt=""/></div>
 <map name="main_8cpp" id="main_8cpp">
-</map>
+<area shape="rect" id="node6" href="print__ip_8h.html" title="Функции печати ip. " alt="" coords="320,80,393,107"/><area shape="rect" id="node11" href="print__ip_8inl.html" title="print_ip.inl" alt="" coords="493,155,573,181"/></map>
 </div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -112,44 +110,11 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af495e3a334982f78fe60feeaa1c93541"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af495e3a334982f78fe60feeaa1c93541">IsLittleEndian</a> ()</td></tr>
-<tr class="memdesc:af495e3a334982f78fe60feeaa1c93541"><td class="mdescLeft">&#160;</td><td class="mdescRight">Определяет порядок байт в системе  <a href="#af495e3a334982f78fe60feeaa1c93541">More...</a><br/></td></tr>
-<tr class="separator:af495e3a334982f78fe60feeaa1c93541"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa89df9c58a6b424fd1f3e8481617638c"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class Tuple , std::size_t... Is&gt; </td></tr>
-<tr class="memitem:aa89df9c58a6b424fd1f3e8481617638c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aa89df9c58a6b424fd1f3e8481617638c">print_tuple_impl</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const Tuple &amp;t, seq&lt; Is...&gt;)</td></tr>
-<tr class="separator:aa89df9c58a6b424fd1f3e8481617638c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93d1d737afa31637658a3f47c9c74d0c"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class... Args&gt; </td></tr>
-<tr class="memitem:a93d1d737afa31637658a3f47c9c74d0c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a93d1d737afa31637658a3f47c9c74d0c">print_ip</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const std::tuple&lt; Args...&gt; &amp;t)</td></tr>
-<tr class="memdesc:a93d1d737afa31637658a3f47c9c74d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция печати tuple как ip.  <a href="#a93d1d737afa31637658a3f47c9c74d0c">More...</a><br/></td></tr>
-<tr class="separator:a93d1d737afa31637658a3f47c9c74d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea81e89d105de1050ce87bc4f64204bf"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class TCont &gt; </td></tr>
-<tr class="memitem:aea81e89d105de1050ce87bc4f64204bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#aea81e89d105de1050ce87bc4f64204bf">print_ip</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const TCont &amp;v, cont_type)</td></tr>
-<tr class="memdesc:aea81e89d105de1050ce87bc4f64204bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция печати элементов коллекций как ip.  <a href="#aea81e89d105de1050ce87bc4f64204bf">More...</a><br/></td></tr>
-<tr class="separator:aea81e89d105de1050ce87bc4f64204bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a917cf05abcc9cae2d6cee1515a95fffa"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class T &gt; </td></tr>
-<tr class="memitem:a917cf05abcc9cae2d6cee1515a95fffa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a917cf05abcc9cae2d6cee1515a95fffa">print_ip</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const T &amp;v, other_type)</td></tr>
-<tr class="memdesc:a917cf05abcc9cae2d6cee1515a95fffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция печати числовых типов побайтов как ip.  <a href="#a917cf05abcc9cae2d6cee1515a95fffa">More...</a><br/></td></tr>
-<tr class="separator:a917cf05abcc9cae2d6cee1515a95fffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8c15fcc5887a4bef11a4bda7089eb82"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class ChStr , class TrStr , class AllocStr &gt; </td></tr>
-<tr class="memitem:af8c15fcc5887a4bef11a4bda7089eb82"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#af8c15fcc5887a4bef11a4bda7089eb82">print_ip</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const std::basic_string&lt; ChStr, TrStr, AllocStr &gt; &amp;str)</td></tr>
-<tr class="memdesc:af8c15fcc5887a4bef11a4bda7089eb82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция печати текста как... текста  <a href="#af8c15fcc5887a4bef11a4bda7089eb82">More...</a><br/></td></tr>
-<tr class="separator:af8c15fcc5887a4bef11a4bda7089eb82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad49acab981d409f95906c8a57d1f2faa"><td class="memTemplParams" colspan="2">template&lt;class ChStream , class TrStream , class T &gt; </td></tr>
-<tr class="memitem:ad49acab981d409f95906c8a57d1f2faa"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ad49acab981d409f95906c8a57d1f2faa">print_ip</a> (std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const T &amp;v)</td></tr>
-<tr class="memdesc:ad49acab981d409f95906c8a57d1f2faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция печати ip.  <a href="#ad49acab981d409f95906c8a57d1f2faa">More...</a><br/></td></tr>
-<tr class="separator:ad49acab981d409f95906c8a57d1f2faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
 <tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ab560ebd712ab35a71b2892709f3375a1"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#ab560ebd712ab35a71b2892709f3375a1">LittleEndian</a> = <a class="el" href="main_8cpp.html#af495e3a334982f78fe60feeaa1c93541">IsLittleEndian</a>()</td></tr>
-<tr class="memdesc:ab560ebd712ab35a71b2892709f3375a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">True если порядок байт little-endian.  <a href="#ab560ebd712ab35a71b2892709f3375a1">More...</a><br/></td></tr>
-<tr class="separator:ab560ebd712ab35a71b2892709f3375a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Основной файл программы </p>
-<p>Данный файл содержит реализации функций print_ip и функцию main </p>
 </div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a class="anchor" id="ad61844ab25ea35139950e67e9693bc9f"></a>
 <div class="memitem">
@@ -164,33 +129,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">std::cout &lt;&lt; #x<span class="stringliteral">&quot;\n&quot;</span>; <a class="code" href="main_8cpp.html#a93d1d737afa31637658a3f47c9c74d0c">\</a></div>
-<div class="line"><a class="code" href="main_8cpp.html#a93d1d737afa31637658a3f47c9c74d0c">                    print_ip</a>( std::cout, x ); \</div>
-<div class="line">                    std::cout &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
-<div class="ttc" id="main_8cpp_html_a93d1d737afa31637658a3f47c9c74d0c"><div class="ttname"><a href="main_8cpp.html#a93d1d737afa31637658a3f47c9c74d0c">print_ip</a></div><div class="ttdeci">void print_ip(std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const std::tuple&lt; Args...&gt; &amp;t)</div><div class="ttdoc">Функция печати tuple как ip. </div><div class="ttdef"><b>Definition:</b> main.cpp:78</div></div>
+<b>Value:</b><div class="fragment"><div class="line">std::cout &lt;&lt; #x<span class="stringliteral">&quot;\n&quot;</span>; <a class="code" href="print__ip_8h.html#a917cf05abcc9cae2d6cee1515a95fffa">\</a></div>
+<div class="line"><a class="code" href="print__ip_8h.html#a917cf05abcc9cae2d6cee1515a95fffa">                    print_ip</a>( std::cout, x );\</div>
+<div class="line">                    std::cout &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="ttc" id="print__ip_8h_html_a917cf05abcc9cae2d6cee1515a95fffa"><div class="ttname"><a href="print__ip_8h.html#a917cf05abcc9cae2d6cee1515a95fffa">print_ip</a></div><div class="ttdeci">void print_ip(std::basic_ostream&lt; ChStream, TrStream &gt; &amp;os, const T &amp;v, other_type)</div><div class="ttdoc">Функция печати числовых типов побайтов как ip. </div><div class="ttdef"><b>Definition:</b> print_ip.inl:10</div></div>
 </div><!-- fragment -->
 <p>Макрос для вывода тестируемого образца и сам вывод </p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="af495e3a334982f78fe60feeaa1c93541"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool IsLittleEndian </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Определяет порядок байт в системе </p>
-
-</div>
-</div>
 <a class="anchor" id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
 <div class="memitem">
 <div class="memproto">
@@ -203,217 +151,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a93d1d737afa31637658a3f47c9c74d0c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class... Args&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_ip </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::tuple&lt; Args...&gt; &amp;&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Функция печати tuple как ip. </p>
-
-</div>
-</div>
-<a class="anchor" id="aea81e89d105de1050ce87bc4f64204bf"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class TCont &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_ip </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const TCont &amp;&#160;</td>
-          <td class="paramname"><em>v</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cont_type&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Функция печати элементов коллекций как ip. </p>
-
-</div>
-</div>
-<a class="anchor" id="a917cf05abcc9cae2d6cee1515a95fffa"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_ip </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>v</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">other_type&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Функция печати числовых типов побайтов как ip. </p>
-
-</div>
-</div>
-<a class="anchor" id="af8c15fcc5887a4bef11a4bda7089eb82"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class ChStr , class TrStr , class AllocStr &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_ip </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::basic_string&lt; ChStr, TrStr, AllocStr &gt; &amp;&#160;</td>
-          <td class="paramname"><em>str</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Функция печати текста как... текста </p>
-
-</div>
-</div>
-<a class="anchor" id="ad49acab981d409f95906c8a57d1f2faa"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class T &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_ip </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const T &amp;&#160;</td>
-          <td class="paramname"><em>v</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Функция печати ip. </p>
-
-</div>
-</div>
-<a class="anchor" id="aa89df9c58a6b424fd1f3e8481617638c"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ChStream , class TrStream , class Tuple , std::size_t... Is&gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">void print_tuple_impl </td>
-          <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; ChStream, TrStream &gt; &amp;&#160;</td>
-          <td class="paramname"><em>os</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Tuple &amp;&#160;</td>
-          <td class="paramname"><em>t</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">seq&lt; Is...&gt;&#160;</td>
-          <td class="paramname">&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a class="anchor" id="ab560ebd712ab35a71b2892709f3375a1"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool LittleEndian = <a class="el" href="main_8cpp.html#af495e3a334982f78fe60feeaa1c93541">IsLittleEndian</a>()</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>True если порядок байт little-endian. </p>
 
 </div>
 </div>
