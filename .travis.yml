@@ -18,14 +18,14 @@ script:
 - cmake --build . --target package
 - doxygen $TRAVIS_BUILD_DIR/Doxyfile
 deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-  - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uaquilaxp:$BINTRAY_API_KEY "https://api.bintray.com/content/aquilaxp/otus-cpp/print_ip/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
-  provider: pages
-  skip-cleanup: true
-  github_token: $GITHUB_API_KEY  # Set in travis-ci.org dashboard, marked secure
-  keep-history: true
-  local-dir: ./html
-  on:
-    branch: master
+  - provider: script
+    skip_cleanup: true
+    script:
+    - curl -T print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uaquilaxp:$BINTRAY_API_KEY "https://api.bintray.com/content/aquilaxp/otus-cpp/print_ip/$TRAVIS_BUILD_NUMBER/print_ip-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
+  - provider: pages
+    skip-cleanup: true
+    github_token: $GITHUB_API_KEY  # Set in travis-ci.org dashboard, marked secure
+    keep-history: true
+    local-dir: ./html
+    on:
+        branch: master
