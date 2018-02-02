@@ -11,6 +11,8 @@ set(SRC
     )
 
 set(HDR
+    print_ip.h
+    print_ip.inl
     )
 
 #Program print_ip
